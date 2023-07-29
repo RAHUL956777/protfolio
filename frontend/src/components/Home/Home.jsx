@@ -1,12 +1,21 @@
 import React, { useEffect } from "react";
 import * as THREE from "three";
 import "./Home.css";
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import moonImage from "../../images/moon.jpg";
 import venusImage from "../../images/venus.jpg";
 import spaceImage from "../../images/space.jpg";
-import { Typography } from '@mui/material';
+import { Typography } from "@mui/material";
 import TimeLine from "../TimeLine/TimeLine";
+import {
+  SiReact,
+  SiJavascript,
+  SiMongodb,
+  SiNodedotjs,
+  SiExpress,
+  SiCss3,
+  SiHtml5,
+  SiThreedotjs,
+} from "react-icons/si";
 
 const Home = () => {
   useEffect(() => {
@@ -44,7 +53,6 @@ const Home = () => {
     pointLight.position.set(8, 5, 5);
     pointLight2.position.set(-8, -5, -5);
 
-    // const controls = new OrbitControls(camera, renderer.domElement);
     scene.add(moon);
     scene.add(venus);
     scene.add(pointLight);
@@ -105,23 +113,59 @@ const Home = () => {
     <div className="home">
       <canvas className="homeCanvas"></canvas>
       <div className="homeContainer">
-        <Typography variant="h3">
-          TIMELINE
-        </Typography>
-        <TimeLine timelines={[1,2,3,4]} />
+        <Typography variant="h3">TIMELINE</Typography>
+        <TimeLine timelines={[1, 2, 3, 4]} />
       </div>
       <div className="homeSkill">
         <Typography variant="h3">SKILLS</Typography>
         <div className="homeCubeSkills">
           <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
-            <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg" alt="face1" />
+            <img
+              src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg"
+              alt="face1"
+            />
           </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
-            <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg" alt="face1" />
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces2">
+            <img
+              src="https://images.unsplash.com/photo-1560507074-b9eb43faab00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBsYW5ldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="face1"
+            />
           </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
-            <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg" alt="face1" />
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces3">
+            <img
+              src="https://media.istockphoto.com/id/501576389/photo/the-blue-beauty-of-our-galaxy.jpg?s=612x612&w=0&k=20&c=9ONMdcuOe6XGT_VOQhpG5ALAgiykIlBZXRAD78U4bes="
+              alt="face1"
+            />
           </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces4">
+            <img
+              src="https://media.istockphoto.com/id/171149710/photo/venus.jpg?s=612x612&w=0&k=20&c=Xg818UCjSzDgVAlPWnaeAMP_AKCF9RJp_XUSv57WVwo="
+              alt="face1"
+            />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces5">
+            <img
+              src="https://media.istockphoto.com/id/1203815985/photo/planet-mercury-nebula-and-sunlight.jpg?s=612x612&w=0&k=20&c=Y4byEi-mVGL1-m7RY0-e-XGfn7jZCMrxfm-tUx56TJc="
+              alt="face1"
+            />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces6">
+            <img
+              src="https://media.istockphoto.com/id/1133301909/photo/landscape-with-milky-way-galaxy-sunrise-and-earth-view-from-space-with-milky-way-galaxy.jpg?s=612x612&w=0&k=20&c=AbnhmVTU3ZhzuYUGcaJyrdYXECERfwZ4rQm2Mvm3Qu8="
+              alt="face1"
+            />
+          </div>
+        </div>
+        <div className="qubeShadow"></div>
+        <div className="homeSkillBox">
+          <SiReact />
+          <SiJavascript />
+          <SiMongodb />
+          <SiNodedotjs />
+          <SiExpress />
+          <SiCss3 />
+          <SiHtml5 />
+          <SiThreedotjs />
         </div>
       </div>
     </div>

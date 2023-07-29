@@ -1,43 +1,152 @@
-.homeCanvas{
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
+.homeCanvas {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
 }
 
-.homeContainer{
-    background-color: white;
-    padding-top: 4vmax;
-    border-radius:  0 0 200px 200px;
-    border-bottom: 200px solid white;
-    position: relative;
-    z-index: 1;
+.homeContainer {
+  background-color: white;
+  padding-top: 4vmax;
+  border-radius: 0 0 200px 200px;
+  border-bottom: 200px solid white;
+  position: relative;
+  z-index: 1;
 }
 
-.homeContainer > h3{
-    text-align: center;
-    color: rgba(22, 20, 20, 0.904);
-    padding: 4vmax;
+.homeContainer > h3 {
+  text-align: center;
+  color: rgba(22, 20, 20, 0.904);
+  padding: 4vmax;
 }
 
-.homeSkill{
-    transform: translateY(-200px);
-    background-color: hsl(219, 48%, 8%);
-    height: 1500px;
-    position: relative;
-    margin-bottom: -200px;
-    padding: 200px;
-    box-sizing: border-box;
-    perspective: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    overflow-x: hidden;
+.homeSkill {
+  transform: translateY(-200px);
+  background-color: hsl(219, 48%, 8%);
+  height: 1500px;
+  position: relative;
+  margin-bottom: -200px;
+  padding: 200px;
+  box-sizing: border-box;
+  perspective: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: hidden;
 }
 
-.homeSkill > h3{
-    text-align: center;
-    color: white;
-    margin-bottom: 4vmax;
-    font-size: 4vmax;
+.homeSkill > h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 4vmax;
+  font-size: 4vmax;
+}
+
+.homeCubeSkills {
+  width: 200px;
+  height: 200px;
+  animation: qubeRotation 15s linear infinite alternate;
+  transform-style: preserve-3d;
+}
+
+.homeCubeSkillsFaces {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0.7;
+}
+
+.homeCubeSkillsFaces > img {
+  width: inherit;
+  height: inherit;
+}
+
+.homeCubeSkillsFaces1 {
+  transform: translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFaces2 {
+  transform: rotateY(180deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFaces3 {
+  transform: rotateY(-90deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFaces4 {
+  transform: rotateY(90deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFaces5 {
+  transform: rotateX(90deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFaces6 {
+  transform: rotateX(-90deg) translate3d(0, 0, 150px);
+}
+
+@keyframes qubeRotation {
+  to {
+    transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
+  }
+}
+
+.qubeShadow {
+  width: 300px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 50%;
+  animation: qubeShadow 1s ease-in-out infinite alternate;
+  filter: blur(3px);
+}
+
+@keyframes qubeShadow {
+  to {
+    transform: scale(1.2) translateY(-10px);
+  }
+}
+
+.homeSkillBox {
+  background-color: hsl(250, 100%, 75%);
+  padding: 0 2vmax;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: -300px;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.homeSkillBox > svg {
+  font-size: 5vmax;
+  color: white;
+  transition: all 0.5s;
+  margin: 10px;
+}
+
+.homeSkillBox > svg:hover {
+  transform: scale(1.5);
+}
+
+@keyframes homeskillBoxAnimationOn {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 40px;
+  }
+}
+
+@keyframes homeskillBoxAnimationOff {
+  from {
+    right: 40px;
+  }
+  to {
+    right: -300px;
+  }
 }
