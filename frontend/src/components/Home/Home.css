@@ -3,3 +3,41 @@
     height: 100vh;
     max-width: 100%;
 }
+
+.homeContainer{
+    background-color: white;
+    padding-top: 4vmax;
+    border-radius:  0 0 200px 200px;
+    border-bottom: 200px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+.homeContainer > h3{
+    text-align: center;
+    color: rgba(22, 20, 20, 0.904);
+    padding: 4vmax;
+}
+
+.homeSkill{
+    transform: translateY(-200px);
+    background-color: hsl(219, 48%, 8%);
+    height: 1500px;
+    position: relative;
+    margin-bottom: -200px;
+    padding: 200px;
+    box-sizing: border-box;
+    perspective: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.homeSkill > h3{
+    text-align: center;
+    color: white;
+    margin-bottom: 4vmax;
+    font-size: 4vmax;
+}

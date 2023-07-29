@@ -4,12 +4,16 @@ import "./Home.css";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import moonImage from "../../images/moon.jpg";
 import venusImage from "../../images/venus.jpg";
+import spaceImage from "../../images/space.jpg";
+import { Typography } from '@mui/material';
+import TimeLine from "../TimeLine/TimeLine";
 
 const Home = () => {
   useEffect(() => {
     const textureLoader = new THREE.TextureLoader();
     const moonTexture = textureLoader.load(moonImage);
     const venusTexture = textureLoader.load(venusImage);
+    const spaceTexture = textureLoader.load(spaceImage);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -18,7 +22,7 @@ const Home = () => {
       0.1,
       100
     );
-    camera.position.set(4, 4, 4);
+    camera.position.set(4, 4, 8);
 
     const canvas = document.querySelector(".homeCanvas");
     const renderer = new THREE.WebGLRenderer({ canvas });
@@ -45,6 +49,7 @@ const Home = () => {
     scene.add(venus);
     scene.add(pointLight);
     scene.add(pointLight2);
+    scene.background = spaceTexture;
 
     const constSpeed = 0.01;
 
@@ -73,7 +78,6 @@ const Home = () => {
         venus.rotation.y -= constSpeed;
       }
 
-      
       if (e.clientY <= window.innerHeight / 2) {
         moon.rotation.x -= constSpeed;
         moon.rotation.y -= constSpeed;
@@ -100,6 +104,26 @@ const Home = () => {
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
+      <div className="homeContainer">
+        <Typography variant="h3">
+          TIMELINE
+        </Typography>
+        <TimeLine timelines={[1,2,3,4]} />
+      </div>
+      <div className="homeSkill">
+        <Typography variant="h3">SKILLS</Typography>
+        <div className="homeCubeSkills">
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
+            <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg" alt="face1" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
+            <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg" alt="face1" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
+            <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg" alt="face1" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
