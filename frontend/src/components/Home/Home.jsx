@@ -121,7 +121,7 @@ const Home = () => {
         <div className="homeCubeSkills">
           <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
             <img
-              src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_640.jpg"
+              src="https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png"
               alt="face1"
             />
           </div>
