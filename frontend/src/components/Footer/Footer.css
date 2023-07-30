@@ -41,3 +41,28 @@
 .footer > div > a:nth-child(3):hover{
   color: rgb(64, 88, 226);
 }
+
+.footerContactBtn{
+  background-color: white;
+  color: black;
+  padding: 5px;
+  width: 120px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.5s;
+  border: 1px solid white;
+  display: block;
+  margin: 2vmax 0;
+}
+
+.footerContactBtn > p{
+  color: black;
+}
+
+.footerContactBtn:hover{
+  background-color: unset;
+}
+
+.footerContactBtn:hover p{
+  color: white;
+}
