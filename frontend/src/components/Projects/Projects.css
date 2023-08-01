@@ -125,7 +125,7 @@
     flex-direction: column;
   }
 
-  .projectCard:nth-child(even){
+  .projectCard:nth-child(even) {
     flex-direction: column;
   }
 
@@ -135,5 +135,9 @@
 
   .projectCard > div:last-child > p {
     text-align: center;
+  }
+
+  .footer{
+    margin-top: 5vmax;
   }
 }

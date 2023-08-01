@@ -58,7 +58,7 @@ const Projects = () => {
           />
         ))}
       </div>
-      <Typography variant="h3" style={{ font: "100 1.2rem 'Ubuntu Mono'" }}>
+      <Typography variant="h3" className="projectHeding" style={{ font: "100 1.2rem 'Ubuntu Mono'" }}>
         All The Projects Shown Above Are Made By Me <FaRegSmileWink />
       </Typography>
     </div>
