@@ -1,0 +1,122 @@
+.login{
+    background-color: hsl(219, 48%, 8%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer{
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.336);
+    background-color: white;
+}
+
+.loginFrom{
+    background-color: inherit;
+    height: 70vh;
+    border-radius: 5px;
+    padding: 2vmax;
+}
+
+.loginFrom >h4{
+    margin: 2vmax;
+    letter-spacing: 15px;
+    display: flex;
+    transform: translateX(-100vw);
+    animation: contactFromInputs 1s ease-in-out forwards;
+    justify-content: center;
+}
+
+@keyframes contactFromInputs {
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .loginFrom >h4 >p{
+    transition:  all 0.5s;
+    cursor: default;
+  }
+
+  .loginFrom >h4 >p:hover{
+    transform: translateY(-10px);
+  }
+
+  .loginFrom >div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2vmax 8vmax;
+  }
+
+  .loginFrom >div>input{
+    padding: 1vmax 2vmax;
+    margin: 1vmax;
+    border: 1px solid rgba(0, 0, 0, 0.192);
+    transform: translateX(-100vw);
+    border-radius: 30px;
+    font: 100 1rem "Roboto";
+    animation: contactFromInputs 1s ease-in-out forwards;
+    outline: none;
+  }
+
+  .loginFrom > div > button{
+    padding: 1vmax 2vmax;
+    margin: 1vmax;
+    transform: translateY(-100vh);
+    animation: contactFromBtn 1s ease-in-out forwards 1s;
+    border-radius: 30px;
+    background-color: hsl(250, 100%, 75%);
+    color: white;
+    transition: all 0.5s;
+  }
+
+  .loginFrom > div > button:hover{
+    background-color: hsl(219, 48%, 8%);
+  }
+
+  .loginFrom > div > input{
+    padding: 1vmax;
+    margin: 1vmax;
+    border: 1px solid rgba(0, 0, 0, 0.192);
+    transform: translateX(-100vw);
+    border-radius: 30px;
+    animation: contactFromInputs 1s ease-in-out forwards;
+    font: 100 1rem "Roboto";
+    outline: none;
+  }
+
+  @keyframes contactFromBtn {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width:600px){
+    .loginContainer{
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .loginFrom{
+        border-radius: 0;
+    }
+
+    .login >div{
+        padding: 4vw 8vw;
+    }
+
+    .loginFrom > div > input{
+        padding: 3vw 6vw;
+        margin: 2vw;
+    }
+
+    .loginFrom > div > button{
+        padding: 3vw 6vw;
+        margin: 2vw;
+    }
+  }
