@@ -195,7 +195,45 @@ export const updateUser = async (req, res) => {
     if (about) {
       user.about.name = about.name;
       user.about.title = about.title;
+      user.about.subtitle = about.subtitle;
+      user.about.description = about.description;
+      user.about.quote = about.quote;
+
+      if (about.avtar) {
+        await cloudinary.v2.uploader.destroy(user.about.avtar.public_id);
+        const myCloud = await cloudinary.v2.upload.upload(about.avtar, {
+          folder: "protfolio",
+        });
+
+        user.about.avtar = {
+          public_id: myCloud.public_id,
+          url: myCloud.secure_url,
+        };
+      }
     }
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      user,
+      message:"User Updated Sucessfully",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+export const addTimeline = async (req, res) => {
+  try {
+    const{title,description,date} = req.body;
+    const user = await User.findById(req.user._id);
+
+    user.timeline.unshift
 
     res.status(200).json({
       success: true,
