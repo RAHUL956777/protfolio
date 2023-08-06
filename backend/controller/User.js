@@ -217,7 +217,7 @@ export const updateUser = async (req, res) => {
     res.status(200).json({
       success: true,
       user,
-      message:"User Updated Sucessfully",
+      message: "User Updated Sucessfully",
     });
   } catch (error) {
     return res.status(400).json({
@@ -227,17 +227,105 @@ export const updateUser = async (req, res) => {
   }
 };
 
-
 export const addTimeline = async (req, res) => {
   try {
-    const{title,description,date} = req.body;
+    const { title, description, date } = req.body;
     const user = await User.findById(req.user._id);
 
-    user.timeline.unshift
+    user.timeline.unshift({
+      title,
+      description,
+      date,
+    });
+
+    await user.save();
 
     res.status(200).json({
       success: true,
-      user,
+      message: "Added To Timeline",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const deleteTimeline = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const user = await User.findById(req.user._id);
+    user.timeline = user.timeline.filter((item) => {
+      item._id !== id;
+    });
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "deleted From Timeline",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const addProject = async (req, res) => {
+  try {
+    const { url, title, image, description, techStack } = req.body;
+    const user = await User.findById(req.user._id);
+
+    const myCloud = await cloudinary.v2.uploader(image, {
+      folder: "protfolio",
+    });
+
+    user.projects.unshift({
+      url,
+      title,
+      description,
+      techStack,
+      image: {
+        public_id: myCloud.public_id,
+        url: myCloud.secure_url,
+      },
+    });
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Added To Projects",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const deleteProject = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const user = await User.findById(req.user._id);
+
+    const project = user.projects.filter((item) => item._id === id);
+
+    await cloudinary.v2.uploader.destroy(project.image.public_id);
+
+    user.projects = user.projects.filter((item)=> item._id !== id)
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "deleted from Projects",
     });
   } catch (error) {
     return res.status(400).json({
