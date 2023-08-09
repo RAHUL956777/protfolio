@@ -1,12 +1,13 @@
 import { sendMail } from "../middlewares/sendmail.js";
 import { User } from "../model/User.js";
-import Jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import cloudinary from "cloudinary";
 
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email, password });
+
     if (!user) {
       return res.status(400).json({
         success: false,
@@ -14,8 +15,8 @@ export const login = async (req, res) => {
       });
     }
 
-    const JWT_SECRET = process.env.JWT_SECRET;
-    const token = Jwt.sign({ _id: user._id }, JWT_SECRET);
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    console.log(process.env.JWT_SECRET)
 
     res
       .status(200)
