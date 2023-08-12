@@ -37,9 +37,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Rahul",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "dasr16583@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -59,7 +59,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          alert("Ahh 😒, something went wrong. Please try again.");
         }
       );
   };
@@ -83,6 +83,8 @@ const Contact = () => {
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Name</span>
             <input
+            required
+            autoComplete="off"
               type='text'
               name='name'
               value={form.name}
@@ -94,6 +96,8 @@ const Contact = () => {
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your email</span>
             <input
+            required
+            autoComplete="off"
               type='email'
               name='email'
               value={form.email}
@@ -105,6 +109,7 @@ const Contact = () => {
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Message</span>
             <textarea
+            required
               rows={7}
               name='message'
               value={form.message}
