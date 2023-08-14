@@ -59,7 +59,9 @@ const Navbar = () => {
                 onClick={() => setActive(nav.title)}
               >
                 {nav.id === "git" ? (
-                  <a href="https://github.com/RAHUL956777">Github Profile</a>
+                  <a href="https://github.com/RAHUL956777">{nav.title}</a>
+                ) : nav.id === "cv" ? (
+                  <a href="https://google.com">{nav.title}</a>
                 ) : (
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 )}
@@ -95,9 +97,9 @@ const Navbar = () => {
                     }}
                   >
                     {nav.id === "git" ? (
-                      <a href="https://github.com/RAHUL956777">
-                        Github Profile
-                      </a>
+                      <a href="https://github.com/RAHUL956777">{nav.title}</a>
+                    ) : nav.id === "cv" ? (
+                      <a href="https://google.com">{nav.title}</a>
                     ) : (
                       <a href={`#${nav.id}`}>{nav.title}</a>
                     )}

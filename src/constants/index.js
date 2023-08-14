@@ -34,6 +34,10 @@ export const navLinks = [
     id: "git",
     title: "Github",
   },
+  {
+    id:"cv",
+    title:"Donload-CV"
+  }
 ];
 
 const services = [
