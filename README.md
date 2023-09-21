@@ -30,19 +30,19 @@ I would like to express my sincere gratitude to all those who have supported and
 Clone the project
 
 ```bash
-  git clone https://link-of-repo
+  git clone [https://link-of-repo](https://github.com/RAHUL956777/protfolio)
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd protfolio
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+  npm install or npm i
 ```
 
 Start the server
